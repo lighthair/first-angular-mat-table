@@ -1,6 +1,6 @@
 # HelloWorld
 
-This project was originally generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+This project was originally generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 It's a simple example showing a table with several columns.
 The example uses the mat-table (from @angular/material) to format columns.
 
