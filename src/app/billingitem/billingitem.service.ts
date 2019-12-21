@@ -9,8 +9,8 @@ import { Observable, of } from 'rxjs';
 export class BillingItemService {
 
   billingItems: BillingItem[] = [];
-  constructor() { 
-    let myDate = new BillingItem({Date:  "1.1.1111"});
+  constructor() {
+    const myDate = new BillingItem({Date:  '1.1.1111'});
     this.addItem(myDate);
 
   }
@@ -25,6 +25,6 @@ export class BillingItemService {
 
   findBill(courseId: string, filter: string, sortDirection: string,
      pageIndex: number, pageSize: number): Observable<BillingItem[]> {
-    return of(this.billingItems); 
+    return of(this.billingItems);
   }
 }

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { BillingItem } from './billingitem/billingitem';
 import { BillingItemService } from './billingitem/billingitem.service';
+import { createDb } from '../db/createDb';
 
 const NOW: Date = new Date();
 const ELEMENT_DATA: BillingItem[] = [
-  { date: "1.1.1111",
-    task: "Training",
-    client: "FTEC",
-    comment: "",
+  { date: '1.1.1111',
+    task: 'Training',
+    client: 'FTEC',
+    comment: '',
     units: 9.33,
     fee: 19,
     sum: 177,
@@ -26,14 +27,15 @@ const ELEMENT_DATA: BillingItem[] = [
 
 // see https://www.techiediaries.com/angular-material-table/
 export class AppComponent implements OnInit {
-  title = "Hello World";
-  displayedColumns  :  string[] = ['date', 'task', 'client', 'comment', 'units', 'fee', 'sum'];
+  title = 'Hello World';
+  displayedColumns:  string[] = ['date', 'task', 'client', 'comment', 'units', 'fee', 'sum'];
   billingItems = ELEMENT_DATA;
 
   constructor(private billingItemService: BillingItemService) {
   }
 
   ngOnInit() {
+  //   createDb();
   }
 
 }

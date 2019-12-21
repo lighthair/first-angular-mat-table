@@ -4,9 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MatInputModule, MatTableModule } from  '@angular/material';
-  
-import {DataSource} from '@angular/cdk/table';
+import { MatInputModule, MatTableModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
