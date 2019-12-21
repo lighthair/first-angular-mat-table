@@ -1,7 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { MatTableModule, MatInputModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
