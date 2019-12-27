@@ -1,5 +1,5 @@
 export class BillingItem {
-    date: string;
+    date: Date;
     task: string;       // Tätigkeit
     client: string;     // Klient
     comment: string;    // Bemerkung
@@ -8,6 +8,7 @@ export class BillingItem {
     sum: number;        // Gesamt Summe Honorar
     duration: Date;
     bill: number;
+    _id: string;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

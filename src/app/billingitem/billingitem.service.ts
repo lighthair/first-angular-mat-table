@@ -29,4 +29,9 @@ export class BillingItemService {
     console.log('findAllItems...');
     return this.http.get(`${appConfig.url}/bills`);
   }
+
+  deleteItem(id: string) {
+    console.log('billingservice: delete...');
+    return this.http.delete(`${appConfig.url}/bills/${id}`);
+  }
 }
