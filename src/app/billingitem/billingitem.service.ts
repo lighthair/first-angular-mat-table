@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BillingItem } from './billingitem';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { appConfig } from '../../config/appconfig';
 
 @Injectable({
   providedIn: 'root'
@@ -9,22 +11,22 @@ import { Observable, of } from 'rxjs';
 export class BillingItemService {
 
   billingItems: BillingItem[] = [];
-  constructor() {
-    const myDate = new BillingItem({Date:  '1.1.1111'});
-    this.addItem(myDate);
-
+  constructor(private http: HttpClient) {
   }
 
-
   // Simulate POST /billingItem
-  addItem(billingItem: BillingItem): BillingItemService {
-
-    this.billingItems.push(billingItem);
-    return this;
+  addItem(billingItem: BillingItem) {
+    this.http.post(`${appConfig.url}/bills`, billingItem)
+      .subscribe(res => console.log('Done'));
   }
 
   findBill(courseId: string, filter: string, sortDirection: string,
-     pageIndex: number, pageSize: number): Observable<BillingItem[]> {
+    pageIndex: number, pageSize: number): Observable<BillingItem[]> {
     return of(this.billingItems);
+  }
+
+  findAllItems(): Observable<Object> {
+    console.log('findAllItems...');
+    return this.http.get(`${appConfig.url}/bills`);
   }
 }

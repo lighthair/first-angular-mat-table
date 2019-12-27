@@ -1,35 +1,35 @@
 <mat-table class="lessons-table mat-elevation-z8" [dataSource]="billingItems">
-  
-    <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef>Datum</mat-header-cell>
-        <mat-cell *matCellDef="let billingItem">{{billingItem.date}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="task">
-            <mat-header-cell *matHeaderCellDef>Tätigkeit</mat-header-cell>
-            <mat-cell *matCellDef="let billingItem">{{billingItem.task}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="client">
-            <mat-header-cell *matHeaderCellDef>Klient</mat-header-cell>
-            <mat-cell *matCellDef="let billingItem">{{billingItem.client}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="comment">
-            <mat-header-cell *matHeaderCellDef>Bemerkung</mat-header-cell>
-            <mat-cell *matCellDef="let billingItem">{{billingItem.comment}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="units">
-            <mat-header-cell *matHeaderCellDef>Unterrichtseinheit á 45 min</mat-header-cell>
-            <mat-cell *matCellDef="let billingItem">{{billingItem.units}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="fee">
-            <mat-header-cell *matHeaderCellDef>Rechnung</mat-header-cell>
-            <mat-cell *matCellDef="let billingItem">{{billingItem.fee}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="sum">
-            <mat-header-cell *matHeaderCellDef>Gesamt</mat-header-cell>
-            <mat-cell *matCellDef="let billingItem">{{billingItem.sum}}</mat-cell>
-    </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>      
-    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef>Datum</mat-header-cell>
+                <mat-cell *matCellDef="let billingItem">{{billingItem.date}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="task">
+                <mat-header-cell *matHeaderCellDef>Tätigkeit</mat-header-cell>
+                <mat-cell *matCellDef="let billingItem">{{billingItem.task}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="client">
+                <mat-header-cell *matHeaderCellDef>Klient</mat-header-cell>
+                <mat-cell *matCellDef="let billingItem">{{billingItem.client}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="comment">
+                <mat-header-cell *matHeaderCellDef>Bemerkung</mat-header-cell>
+                <mat-cell *matCellDef="let billingItem">{{billingItem.comment}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="units">
+                <mat-header-cell *matHeaderCellDef>Unterrichtseinheit á 45 min</mat-header-cell>
+                <mat-cell *matCellDef="let billingItem">{{billingItem.units}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="fee">
+                <mat-header-cell *matHeaderCellDef>Rechnung</mat-header-cell>
+                <mat-cell *matCellDef="let billingItem">{{billingItem.fee}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="sum">
+                <mat-header-cell *matHeaderCellDef>Gesamt</mat-header-cell>
+                <mat-cell *matCellDef="let billingItem">{{billingItem.sum}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 
 </mat-table>

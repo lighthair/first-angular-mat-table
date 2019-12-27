@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { CdkTableModule } from '@angular/cdk/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     AppRoutingModule,
     MatInputModule,
     MatTableModule,
-    CdkTableModule
+    CdkTableModule,
+    HttpClientModule
   ],
   exports: [
     MatTableModule,

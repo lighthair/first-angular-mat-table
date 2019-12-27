@@ -12,7 +12,7 @@ describe('AppComponent', () => {
         MatTableModule,
         MatInputModule
       ],
-      
+
       declarations: [
         AppComponent
       ],
