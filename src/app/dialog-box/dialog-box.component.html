@@ -4,6 +4,9 @@
     <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
         <input placeholder="{{action}} Kommentar" matInput [(ngModel)]="local_data.comment">
     </mat-form-field>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+        <input placeholder="{{action}} Klient" matInput [(ngModel)]="local_data.client">
+    </mat-form-field>
     <ng-template #elseTemplate>
         Sure to delete <b>{{local_data.comment}}</b>?
     </ng-template>

@@ -46,7 +46,6 @@ export class AppComponent implements OnInit, OnDestroy {
     try {
       this.subscription = this.bs.findAllItems().subscribe((elements: BillingItem[]) => {
         this.billingItems = elements;
-        console.log(elements);
       });
     } catch (error) {
       console.log(error);
@@ -78,12 +77,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   addRowData(row_obj: BillingItem) {
     const d = new Date();
-    const nItem = new BillingItem();
+    let nItem = new BillingItem();
+    nItem = { ...row_obj };
     nItem.date = d;
-    nItem.comment = row_obj.comment || 'Hallo';
-    this.bs.addItem(nItem).subscribe((response) => {
-      console.log('deleted' + response);
-
+    return this.bs.addItem(nItem).subscribe((response) => {
       this.billingItems.push(nItem);
       this.table.renderRows();
     });

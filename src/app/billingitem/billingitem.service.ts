@@ -14,7 +14,6 @@ export class BillingItemService {
   constructor(private http: HttpClient) {
   }
 
-  // Simulate POST /billingItem
   addItem(billingItem: BillingItem): Observable<Object> {
     return this.http.post(`${appConfig.url}/bills`, billingItem);
   }
@@ -25,16 +24,13 @@ export class BillingItemService {
   }
 
   findAllItems(): Observable<Object> {
-    console.log('findAllItems...');
     return this.http.get(`${appConfig.url}/bills`);
   }
 
   deleteItem(id: string) {
     const url = `${appConfig.url}/bills/${id}`;
-    console.log('billingservice: delete...' + url);
     try {
       return this.http.delete(url);
-
     } catch (error) {
       console.error('delete failed:' + error);
     }
