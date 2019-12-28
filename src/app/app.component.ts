@@ -80,9 +80,14 @@ export class AppComponent implements OnInit, OnDestroy {
     const d = new Date();
     const nItem = new BillingItem();
     nItem.date = d;
-    nItem.comment = row_obj.comment;
-    this.billingItems.push(nItem);
-    this.table.renderRows();
+    nItem.comment = row_obj.comment || 'Hallo';
+    this.bs.addItem(nItem).subscribe((response) => {
+      console.log('deleted' + response);
+
+      this.billingItems.push(nItem);
+      this.table.renderRows();
+    });
+
   }
 
   updateRowData(row_obj: BillingItem) {
@@ -94,7 +99,9 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
   deleteRowData(row_obj: BillingItem) {
-    return this.bs.deleteItem(row_obj._id);
+    return this.bs.deleteItem(row_obj._id).subscribe((response) => {
+      console.log('deleted');
+    });
     // this.billingItems = this.billingItems.filter((value, key) => {
     //   return value._id !== row_obj._id;
     // });

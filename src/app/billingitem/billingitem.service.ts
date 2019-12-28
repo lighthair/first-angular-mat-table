@@ -15,9 +15,8 @@ export class BillingItemService {
   }
 
   // Simulate POST /billingItem
-  addItem(billingItem: BillingItem) {
-    this.http.post(`${appConfig.url}/bills`, billingItem)
-      .subscribe(res => console.log('Done'));
+  addItem(billingItem: BillingItem): Observable<Object> {
+    return this.http.post(`${appConfig.url}/bills`, billingItem);
   }
 
   findBill(courseId: string, filter: string, sortDirection: string,
@@ -31,7 +30,13 @@ export class BillingItemService {
   }
 
   deleteItem(id: string) {
-    console.log('billingservice: delete...');
-    return this.http.delete(`${appConfig.url}/bills/${id}`);
+    const url = `${appConfig.url}/bills/${id}`;
+    console.log('billingservice: delete...' + url);
+    try {
+      return this.http.delete(url);
+
+    } catch (error) {
+      console.error('delete failed:' + error);
+    }
   }
 }
