@@ -5,30 +5,13 @@ import { Subscription } from 'rxjs';
 
 import { MatDialog, MatTable } from '@angular/material';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
-
-const myDate = new Date();
-const ELEMENT_DATA: BillingItem[] = [
-  {
-    date: new Date(),
-    task: 'Training',
-    client: 'FTEC',
-    comment: '',
-    units: 9.33,
-    fee: 19,
-    sum: 177,
-    duration: myDate,
-    bill: 100,
-    _id: '123'
-  }
-];
+import { BillingItemCreator } from './billingitem/billingItemCreator';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
 })
-
-
 
 // see https://www.techiediaries.com/angular-material-table/
 export class AppComponent implements OnInit, OnDestroy {
@@ -77,8 +60,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   addRowData(row_obj: BillingItem) {
     const d = new Date();
-    let nItem = new BillingItem();
-    nItem = { ...row_obj };
+    let nItem = new BillingItemCreator().createDefault();
+    nItem = { ...nItem, ...row_obj };
     nItem.date = d;
     return this.bs.addItem(nItem).subscribe((response) => {
       this.billingItems.push(nItem);

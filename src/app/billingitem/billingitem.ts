@@ -6,12 +6,11 @@ export class BillingItem {
     units: number;      // training units a 45 min
     fee: number;        // Honorar / Stundensatz
     sum: number;        // Gesamt Summe Honorar
-    duration: Date;
+    duration: number;     // course hours
     bill: number;
     _id: string;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);
     }
-
 }
