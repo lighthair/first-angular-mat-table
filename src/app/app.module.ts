@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +22,6 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
   ],
   imports: [
     BrowserModule,
-    // AppRoutingModule,
     CdkTableModule,
     HttpClientModule,
     BrowserAnimationsModule,
