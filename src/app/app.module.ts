@@ -4,14 +4,16 @@ import { AppComponent } from './app.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { FormsModule } from '@angular/forms';
 import {
   MatTableModule,
   MatDialogModule,
   MatFormFieldModule,
   MatInputModule,
-  MatButtonModule
+  MatButtonModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatGridListModule
 } from '@angular/material';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
@@ -30,7 +32,10 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatGridListModule
   ],
   entryComponents: [
     DialogBoxComponent

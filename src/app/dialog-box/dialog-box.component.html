@@ -1,11 +1,25 @@
 <!-- dialog-box.component.html -->
 <h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1>
+
 <div mat-dialog-content>
+
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+        <input matInput [matDatepicker]="picker" (dateInput)="addEvent('input', $event)"
+            (dateChange)="addEvent('change', $event)" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker matInput [(ngModel)]="selectedDate" #picker></mat-datepicker>
+    </mat-form-field>
     <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
         <input placeholder="{{action}} Kommentar" matInput [(ngModel)]="local_data.comment">
     </mat-form-field>
     <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
         <input placeholder="{{action}} Klient" matInput [(ngModel)]="local_data.client">
+    </mat-form-field>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+        <input placeholder="{{action}} Tätikgkeit" matInput [(ngModel)]="local_data.task">
+    </mat-form-field>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+        <input placeholder="{{action}} Unterrichtseinheiten" matInput [(ngModel)]="local_data.units">
     </mat-form-field>
     <ng-template #elseTemplate>
         Sure to delete <b>{{local_data.comment}}</b>?

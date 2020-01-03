@@ -40,6 +40,9 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  onSelect(event) {
+    console.log(event);
+  }
   openDialog(action, obj) {
     obj.action = action;
     const dialogRef = this.dialog.open(DialogBoxComponent, {
@@ -62,7 +65,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const d = new Date();
     let nItem = new BillingItemCreator().createDefault();
     nItem = { ...nItem, ...row_obj };
-    nItem.date = d;
+    // nItem.date = d;
     return this.bs.addItem(nItem).subscribe((response) => {
       this.billingItems.push(nItem);
       this.table.renderRows();
