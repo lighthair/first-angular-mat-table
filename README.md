@@ -6,7 +6,13 @@ The example uses the mat-table (from @angular/material) to format columns.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` to start all necessary servers. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Start details:
+npm start will:
+* start a mongodb docker container called billie, using port 27017
+* start the dbserver to get and put data from billie
+* start angular with ng serve
 
 ## Code scaffolding
 
