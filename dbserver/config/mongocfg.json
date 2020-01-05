@@ -1,6 +1,6 @@
 {
-    "port": 32770,
-    "url": "mongodb://192.168.99.100:32770/",
+    "port": 27017,
+    "url": "mongodb://192.168.99.100:27017/",
     "db": "bfz",
     "collection": "bills"
 }
