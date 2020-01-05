@@ -1,8 +1,19 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import {
+  MatTableModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatGridListModule
+} from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -10,7 +21,18 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         MatTableModule,
-        MatInputModule
+        MatInputModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        MatTableModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatGridListModule
       ],
 
       declarations: [
@@ -25,10 +47,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Hello World'`, () => {
+  it(`should have as title 'Rechnung BFZ'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Hello World');
+    expect(app.title).toEqual('Rechnung BFZ');
   });
 
 });
