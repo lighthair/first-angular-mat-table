@@ -12,5 +12,5 @@ jobs:
       - name: run tests
         run: |
           npm i
-          npm test || true
+          npm test
         shell: powershell
