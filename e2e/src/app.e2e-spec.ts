@@ -1,14 +1,10 @@
-import { AppPage } from './app.po';
+import { Selector } from 'testcafe';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+fixture('Smoke test')
+  .page('http://localhost:4200');
 
-  beforeEach(() => {
-    page = new AppPage();
-  });
-
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Hello');
-  });
+test('Title should be BFZ Rechnung', async t => {
+  const articleHeader = await Selector('title');
+  await t
+    .expect(articleHeader.innerText).eql('BFZ Rechnung');
 });

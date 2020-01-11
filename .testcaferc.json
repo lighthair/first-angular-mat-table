@@ -1,0 +1,18 @@
+{
+    "browsers": [
+        "chrome"
+    ],
+    "src": [
+        "./e2e/src/*.e2e-spec.ts"
+    ],
+    "quarantineMode": false,
+    "skipJsErrors": true,
+    "skipUncaughtErrors": true,
+    "appInitDelay": 3000,
+    "concurrency": 3,
+    "selectorTimeout": 3000,
+    "assertionTimeout": 1000,
+    "pageLoadTimeout": 1000,
+    "disablePageCaching": false,
+    "developmentMode": false
+}
