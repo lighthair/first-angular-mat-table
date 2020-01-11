@@ -1,4 +1,7 @@
-# HelloWorld
+# My first mat table
+<a href="https://github.com/DevExpress/testcafe">
+    <img alt="Tested with TestCafe" src="https://img.shields.io/badge/tested%20with-TestCafe-2fa4cf.svg">
+</a>
 
 This project was originally generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 It's a simple example showing a table with several columns.
@@ -26,9 +29,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running end-to-end tests with testcafe
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm e2e` to execute the end-to-end tests via [testcafe](https://www.npmjs.com/package/testcafe)
 
 ## Further help
 
