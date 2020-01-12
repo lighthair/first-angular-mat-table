@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng serve",
-    "start": "run-p ng mongo",
+    "start": "run-p ng mongo mongo-container",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "testcafe chrome",
     "postinstall": "cd ./dbserver && npm install",
     "mongo": "cd ./dbserver && nodemon server",
-    "mongo-container": "docker-compose start"
+    "docker-machine": "docker-machine start default",
+    "mongo-container": "docker-compose up -d"
   },
   "private": true,
   "dependencies": {
